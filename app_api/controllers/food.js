@@ -15,9 +15,9 @@ module.exports.foodCreate = function (req, res) {
       console.log(err);
       sendJSONresponse(res, 400, err); 
     } else {
-      res.header(
+/*       res.header(
       Food:req.protocol + '://' + req.get('host') + '/api/food/' + food._id
-      );
+      ); */
       console.log(food);
       sendJSONresponse(res, 201, food);
     }
@@ -42,7 +42,6 @@ module.exports.foodDetail = function (req, res) {
   foodpath
     .find({})
     .exec(
-      function(err, food)
           function(err, food) {
             if (!food){
               sendJSONresponse(res, 404, {
@@ -114,7 +113,6 @@ module.exports.foodUpdateOne = function (req, res) {
           sendJSONresponse(res, 400, err);
           return;
         }
-        
         food.name = req.body.name;
         food.date = req.body.date;
         food.expiry = req.body.expiry;

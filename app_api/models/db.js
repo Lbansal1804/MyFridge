@@ -46,7 +46,5 @@ process.on('SIGTERM', function() {
     });
 });
 
-console.log("HELLO WORLD\n");
-
 // BRING IN YOUR SCHEMAS & MODELS
 require('./food');
